@@ -1,12 +1,17 @@
 package com.example.shariqkhan.socialconnect.Adapter;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.shariqkhan.socialconnect.Model.Messages;
 import com.example.shariqkhan.socialconnect.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ShariqKhan on 12/23/2017.
@@ -14,20 +19,31 @@ import com.example.shariqkhan.socialconnect.R;
 
 public class AdapterChat extends RecyclerView.Adapter<AdapterChat.MyHolder> {
 
-//    AdapterChat(ArrayAdapter<String>)
+    ArrayList<Messages> arrayList = new ArrayList<>();
+
+    public AdapterChat(ArrayList<Messages> arrayList){
+        this.arrayList = arrayList;
+    }
+
     @Override
     public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
+        return new MyHolder(view);
+
     }
 
     @Override
     public void onBindViewHolder(MyHolder holder, int position) {
 
+        Messages m = arrayList.get(position);
+        holder.message.setText(m.getMessage());
+        holder.name.setText(m.getFrom());
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return arrayList.size();
     }
 public static  class MyHolder extends RecyclerView.ViewHolder
 {
