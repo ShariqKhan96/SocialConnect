@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SocialConnect</string>
+    <string name="facebook_app_id">334146073720024</string>
+    <string name="facebook_login_protocol_scheme">fb334146073720024</string>
+    <string name="twitter_app_key">BTGMFSCRwi9NABvBJ1AAoIJwA</string>
+    <string name="twitter_key_secret">xKIYNtzcJvbjyuI5fzuIdkavmPM8BjkJFtfZidwCouMnN2rvN6</string>
+
+</resources>
